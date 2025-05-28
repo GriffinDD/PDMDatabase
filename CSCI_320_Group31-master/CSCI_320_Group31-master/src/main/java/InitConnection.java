@@ -70,13 +70,13 @@ public class InitConnection {
             java.util.Properties config = new java.util.Properties();
             config.put("StrictHostKeyChecking", "no");
             JSch jsch = new JSch();
-            session = jsch.getSession(username, "starbug.cs.rit.edu", 22);
+            session = jsch.getSession(username, "{server}", 22);
             session.setPassword(password);
             session.setConfig(config);
             session.setConfig("PreferredAuthentications","publickey,keyboard-interactive,password");
             session.connect();
             int assigned_port = session.setPortForwardingL(5432, "127.0.0.1", 5432);
-            url = "jdbc:postgresql://127.0.0.1:"+ assigned_port + "/p32001_31";
+            url = "jdbc:postgresql://127.0.0.1:"+ assigned_port;
 
             props = new Properties();
             props.put("user", username);
