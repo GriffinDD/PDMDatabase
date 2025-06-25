@@ -1,1 +1,1 @@
-Simple java command line app used to simulate a movie-watching service via postgresql.
+Simple java command line app used to simulate a movie-watching service via postgresql. This repo just contains the application itself, but would function if a valid database and credentials were provided in InitConnection.java in the projects src folder.
